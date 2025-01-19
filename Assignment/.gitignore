@@ -1,0 +1,55 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vscode/
+.vscode/**
+.idea/
+.idea/**
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+.nuget/
+
+# Ignore the byproducts of running tests
+[Tt]est[Rr]esult*
+*.TestResults
+*.trx
+*.coverage
+*.coveragexml
+*.log
+
+# Ignore web config transforms and publish output
+appsettings.*.json
+web.config.transform
+web.*.config.transform
+wwwroot/
+publish/
+
+# Ignore IDE-specific files
+.vs/
+*.code-workspace
+
+# Ignore environment variables file
+.env
+
+# Ignore any other files you don't want to track
+secrets.json
