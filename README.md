@@ -1,5 +1,5 @@
 
-# Min TDD inlämning
+# Min( Andreas Vilhelmsson ) TDD inlämning
 
 ## Instruktioner
 Uppdelat i en Assignment mapp och test AssignmentTest mapp
