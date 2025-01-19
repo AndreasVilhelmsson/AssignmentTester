@@ -72,6 +72,27 @@ namespace Assignment
 			{
 				Console.WriteLine("Fel: " + ex.Message);
 			}
+
+			//Bookingsystem
+
+			IBookingRepository bookingRepository = new InMemoryBookingRepository();
+
+			// Skapa en instans av BookingServiceFacade med bookingRepository
+			var facade = new BookingServiceFacade(bookingRepository);
+
+			DateTime startTime = new DateTime(2025, 1, 20, 10, 0, 0); // 20 Jan 2025, 10:00 AM
+			DateTime endTime = new DateTime(2025, 1, 20, 11, 0, 0);   // 20 Jan 2025, 11:00 AM
+
+			bool isBooked = facade.BookSlot(startTime, endTime);
+			Console.WriteLine(isBooked ? "Bokning lyckades!" : "Bokning misslyckades.");
+
+			// Hämta tillgängliga tidsluckor
+			var availableSlots = facade.GetAvailableTimeSlots();
+			Console.WriteLine("Tillgängliga tidsluckor:");
+			foreach (var slot in availableSlots)
+			{
+				Console.WriteLine(slot.ToString("dd MMM yyyy, HH:mm"));
+			}
 		}
 	}
 }

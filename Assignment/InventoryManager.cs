@@ -13,6 +13,21 @@ public class InventoryManager
 	// Metod för att lägga till en vara i lagret
 	public void AddItem(string itemName, int quantity)
 	{
+		if (itemName == null)
+		{
+			throw new ArgumentNullException(nameof(itemName));
+		}
+
+		if (string.IsNullOrWhiteSpace(itemName))
+		{
+			throw new ArgumentException("Item name cannot be empty or whitespace.", nameof(itemName));
+		}
+
+		if (quantity < 0)
+		{
+			throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity cannot be negative.");
+		}
+
 		if (inventory.ContainsKey(itemName))
 		{
 			inventory[itemName] += quantity;
@@ -26,6 +41,16 @@ public class InventoryManager
 	// Metod för att ta bort en vara från lagret
 	public void RemoveItem(string itemName, int quantity)
 	{
+		if (itemName == null)
+		{
+			throw new ArgumentNullException(nameof(itemName));
+		}
+
+		if (string.IsNullOrWhiteSpace(itemName))
+		{
+			throw new ArgumentException("Item name cannot be empty or whitespace.", nameof(itemName));
+		}
+
 		if (!inventory.ContainsKey(itemName))
 		{
 			throw new InvalidOperationException($"Item '{itemName}' does not exist in the inventory.");
